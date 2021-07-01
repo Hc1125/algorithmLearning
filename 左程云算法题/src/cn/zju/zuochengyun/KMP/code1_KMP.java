@@ -13,14 +13,28 @@ public class code1_KMP {
         char[] match = m.toCharArray();
         int x = 0, y = 0;
         int[] next = getNextArray(match);
+        /**
+         * O(N)
+         * 复杂度证明
+         * xMax -> n , yMax -> m -> n
+         * 循环中三个判断条件  X(max, n)  X - Y(max, n)
+         *       (1)            上升       不变
+         *       (2)            上升       上升
+         *       (3)            不变       上升
+         *       X和 X - Y在所有的判断条件中只有上升或者不变
+         *       且变化幅度最大都是n
+         *       所以两者变化幅度合起来不超过2n
+         *       ->    O(N)
+         */
+
         while (x < str.length && y < match.length) {
             if (str[x] == match[y]) {
                 x++;
                 y++;
-            } else if (next[y] == -1) {
-                x++;
-            } else {
+            } else if (y > 0) {
                 y = next[y];
+            } else {
+                x++;
             }
         }
         return y == match.length ? x - y : - 1;
@@ -46,6 +60,5 @@ public class code1_KMP {
         }
         return next;
     }
-
-
+    
 }
