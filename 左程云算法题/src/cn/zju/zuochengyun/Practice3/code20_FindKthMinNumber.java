@@ -7,6 +7,9 @@ package cn.zju.zuochengyun.Practice3;
  * 希望从A和B数组中，找出最大的k个数字
  */
 public class code20_FindKthMinNumber {
+    public static int findKthNum(int[] arr1, int[] arr2) {
+
+    }
     // A[s1...e1]
     // B[s2...e2]
     // 这两段一定等长且有序
