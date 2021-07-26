@@ -31,5 +31,4 @@ public class code3_47 {
             perm.remove(idx);
         }
     }
-
 }
