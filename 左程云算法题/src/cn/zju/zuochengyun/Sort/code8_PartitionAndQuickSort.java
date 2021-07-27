@@ -11,9 +11,6 @@ public class code8_PartitionAndQuickSort {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
-    public static int partition(int[] arr, int l, int r) {
-        return 1;
-    }
     public static int[] netherlandsFlag(int[] arr, int l, int r) {
         if (l > r) {
             return new int[] {-1, -1};
