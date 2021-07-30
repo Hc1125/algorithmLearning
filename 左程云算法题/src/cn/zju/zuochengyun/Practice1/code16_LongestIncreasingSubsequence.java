@@ -29,7 +29,6 @@ public class code16_LongestIncreasingSubsequence {
 
 
 
-    // O（N*logN）的解法
     public static int[] generateLIS(int[] arr, int[] dp) {
         int len = 0;
         int index = 0;
@@ -50,6 +49,7 @@ public class code16_LongestIncreasingSubsequence {
         return lis;
     }
 
+    // O（N*logN）的解法
     public static int[] lis2(int[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
