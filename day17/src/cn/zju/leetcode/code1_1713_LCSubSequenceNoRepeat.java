@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class code1_1713 {
+public class code1_1713_LCSubSequenceNoRepeat {
     public static int minOperations1(int[] target, int[] arr) {
         int m = target.length;
         int n = arr.length;

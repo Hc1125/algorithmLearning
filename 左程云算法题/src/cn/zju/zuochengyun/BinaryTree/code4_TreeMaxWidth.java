@@ -34,7 +34,7 @@ public class code4_TreeMaxWidth {
             }
             if(curNodeLevel == curLevel){
                 curLevelNodes++;
-            }else{
+            } else {
                 max = Math.max(max, curLevelNodes);
                 curLevel++;
                 curLevelNodes = 1;

@@ -23,9 +23,9 @@ public class code3_BSAwesome {
             mid = (left + right) / 2;
             if(arr[mid] > arr[mid - 1]){
                 right = mid - 1;
-            }else if(arr[mid] > arr[mid + 1]){
+            } else if(arr[mid] > arr[mid + 1]){
                 left = mid + 1;
-            }else {
+            } else {
                 return mid;
             }
         }

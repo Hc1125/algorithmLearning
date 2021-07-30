@@ -18,8 +18,7 @@ public class code2_SumOfSubarrayMinimums {
         for (int i = 0; i < arr.length; i++) {
             long start = i - left[i];
             long end = right[i] - i;
-            ans += start * end * (long)arr[i];
-            ans %= 1000000007;
+            ans =(ans + start * end * (long)arr[i]) % 1000000007;
         }
         return (int) ans;
     }

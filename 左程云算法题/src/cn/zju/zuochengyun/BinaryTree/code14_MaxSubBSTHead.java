@@ -14,7 +14,7 @@ public class code14_MaxSubBSTHead {
         }
     }
     public static Info process(TreeNode head){
-        if(head ==null){
+        if(head == null){
             return null;
         }
         Info leftInfo = process(head.left);
