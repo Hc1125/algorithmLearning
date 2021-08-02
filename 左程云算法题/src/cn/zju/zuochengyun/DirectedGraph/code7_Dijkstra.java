@@ -1,5 +1,6 @@
 package cn.zju.zuochengyun.DirectedGraph;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -32,6 +33,39 @@ public class code7_Dijkstra {
         }
         return distanceMap;
     }
+    // 简易写法
+    // times : 0:起点，1:终点，2:距离
+    // n 总结点数，k：出发点
+    public static int[] dijkstra2(int[][] times, int n, int k) {
+        final int INF = Integer.MAX_VALUE / 2;
+        int[][] g = new int[n][n];
+        for (int i = 0; i < n; ++i) {
+            Arrays.fill(g[i], INF);
+        }
+        for (int[] t : times) {
+            int x = t[0] - 1, y = t[1] - 1;
+            g[x][y] = t[2];
+        }
+
+        int[] dist = new int[n];
+        Arrays.fill(dist, INF);
+        dist[k - 1] = 0;
+        boolean[] used = new boolean[n];
+        for (int i = 0; i < n; ++i) {
+            int x = -1;
+            for (int y = 0; y < n; ++y) {
+                if (!used[y] && (x == -1 || dist[y] < dist[x])) {
+                    x = y;
+                }
+            }
+            used[x] = true;
+            for (int y = 0; y < n; ++y) {
+                dist[y] = Math.min(dist[y], dist[x] + g[x][y]);
+            }
+        }
+        return dist;
+    }
+
     public static Node getMinDistanceAndUnselectedNode(HashMap<Node, Integer> distanceMap, HashSet<Node> touchedNodes) {
         Node minNode = null;
         int minDistance = Integer.MAX_VALUE;
@@ -45,6 +79,7 @@ public class code7_Dijkstra {
         }
         return minNode;
     }
+
     public static class NodeRecord {
         public Node node;
         public int distance;
@@ -130,7 +165,7 @@ public class code7_Dijkstra {
             nodes[index2] = tmp;
         }
     }
-    public static HashMap<Node, Integer> dijkstra2(Node head, int size) {
+    public static HashMap<Node, Integer> dijkstra3(Node head, int size) {
         NodeHeap nodeHeap = new NodeHeap(size);
         nodeHeap.addOrUpdateOrIgnore(head,0);
         HashMap<Node, Integer> result = new HashMap<>();
