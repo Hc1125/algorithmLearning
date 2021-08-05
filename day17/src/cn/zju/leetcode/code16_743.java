@@ -104,6 +104,7 @@ public class code16_743 {
         }
     }
 
+    // 简化版dijkstra
     public int networkDelayTime2(int[][] times, int n, int k) {
         final int INF = Integer.MAX_VALUE / 2;
         int[][] g = new int[n][n];
