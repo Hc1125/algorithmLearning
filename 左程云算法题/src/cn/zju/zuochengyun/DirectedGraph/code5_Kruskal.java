@@ -2,6 +2,9 @@ package cn.zju.zuochengyun.DirectedGraph;
 
 import java.util.*;
 
+/**
+ * 最小生成树问题
+ */
 public class code5_Kruskal {
     public static class UnionFind {
         // key 某一个节点，value key节点往上的节点

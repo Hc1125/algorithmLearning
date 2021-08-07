@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
+/**
+ * 最小生成树问题
+ */
 public class code6_Prim {
     public static Set<Edge> primMST(Graph graph) {
         // 解锁的边进入小根堆
