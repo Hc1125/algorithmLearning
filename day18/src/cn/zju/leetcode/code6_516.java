@@ -2,7 +2,7 @@ package cn.zju.leetcode;
 
 import java.util.Map;
 
-public class code5_516 {
+public class code6_516 {
     public int longestPalindromeSubseq(String s) {
         if (s == null || s.length() == 0) {
             return 0;
