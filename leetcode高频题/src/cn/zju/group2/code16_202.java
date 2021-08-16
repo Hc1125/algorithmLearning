@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code16_202 {
     // 快乐数一定会经过1 或 4，经过1的就是快乐数。

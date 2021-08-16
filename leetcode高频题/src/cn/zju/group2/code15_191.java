@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code15_191 {
     public static int hammingWeight(int n) {

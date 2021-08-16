@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code8_152 {
     public int maxProduct(int[] nums) {

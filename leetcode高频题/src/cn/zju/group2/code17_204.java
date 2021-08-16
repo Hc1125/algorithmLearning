@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code17_204 {
     public int countPrimes(int n) {

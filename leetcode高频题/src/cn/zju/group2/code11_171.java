@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code11_171 {
     public int titleToNumber(String columnTitle) {

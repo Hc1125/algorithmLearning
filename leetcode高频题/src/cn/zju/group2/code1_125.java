@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code1_125 {
     public boolean isPalindrome(String s) {

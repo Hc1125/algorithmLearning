@@ -1,4 +1,4 @@
-package cn.zju.group1;
+package cn.zju.group2;
 
 public class code12_172 {
     // 5的因子数一定比2的因字数少
