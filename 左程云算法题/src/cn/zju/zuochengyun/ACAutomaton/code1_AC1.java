@@ -105,6 +105,6 @@ public class code1_AC1 {
         ac.insert("he");
         ac.insert("c");
         ac.build();
-        System.out.println(ac.containNum("cdhe"));
+        System.out.println(ac.containNum("cdhehe"));
     }
 }
