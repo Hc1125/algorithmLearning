@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-public class code7_103 {
+public class code7_103_BinaryTreeZigzagLevelOrderTraversal {
     public class TreeNode {
         int val;
         TreeNode left;

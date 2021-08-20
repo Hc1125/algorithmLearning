@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code12_124 {
+public class code12_124_BinaryTreeMaximumPathSum {
     public class TreeNode {
         int val;
         TreeNode left;

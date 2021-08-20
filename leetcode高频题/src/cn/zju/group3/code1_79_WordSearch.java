@@ -2,7 +2,7 @@ package cn.zju.group3;
 
 
 
-public class code1_79 {
+public class code1_79_WordSearch {
     public boolean exist(char[][] board, String word) {
         char[] w = word.toCharArray();
         for (int i = 0; i < board.length; i++) {

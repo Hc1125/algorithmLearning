@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code6_101 {
+public class code6_101_SymmetricTree {
     public class TreeNode {
         int val;
         TreeNode left;

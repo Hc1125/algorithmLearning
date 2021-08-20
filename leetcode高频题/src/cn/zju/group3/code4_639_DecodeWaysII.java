@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code4_639 {
+public class code4_639_DecodeWaysII {
     public int numDecodings(String s) {
         int base = 1000000007;
         char[] str = s.toCharArray();

@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code3_91 {
+public class code3_91_DecodeWays {
     public int numDecodings(String s) {
         int n = s.length();
         int a = 0, b = 1, c = 0;

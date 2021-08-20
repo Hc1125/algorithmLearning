@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code2_88 {
+public class code2_88_MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int index = nums1.length;
         while (m > 0 && n > 0) {

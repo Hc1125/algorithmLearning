@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code8_108 {
+public class code8_108_ConvertSortedArrayToBinarySearchTree {
     public class TreeNode {
         int val;
         TreeNode left;

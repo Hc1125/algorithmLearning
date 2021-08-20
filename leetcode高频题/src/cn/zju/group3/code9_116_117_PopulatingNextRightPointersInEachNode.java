@@ -1,6 +1,6 @@
 package cn.zju.group3;
 
-public class code9_116_117 {
+public class code9_116_117_PopulatingNextRightPointersInEachNode {
     public class Node {
         public int val;
         public Node left;

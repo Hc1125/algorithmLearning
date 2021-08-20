@@ -3,7 +3,7 @@ package cn.zju.group3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class code5_98 {
+public class code5_98_ValidateBinarySearchTree {
     public class TreeNode {
         int val;
         TreeNode left;
