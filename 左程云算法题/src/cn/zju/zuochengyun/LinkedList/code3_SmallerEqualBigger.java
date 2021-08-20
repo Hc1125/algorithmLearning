@@ -1,7 +1,9 @@
 package cn.zju.zuochengyun.LinkedList;
 
 
-public class code3_SmallerEqualBigger {
+public class
+
+code3_SmallerEqualBigger {
     public static Node listPartition1(Node head, int pivot){
         if(head == null){
             return head;
