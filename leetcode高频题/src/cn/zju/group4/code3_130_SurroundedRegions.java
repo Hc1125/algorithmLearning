@@ -1,7 +1,7 @@
 package cn.zju.group4;
 
 
-public class code3_130 {
+public class code3_130_SurroundedRegions {
     public void solve(char[][] board) {
         if (board == null || board.length == 0 || board[0] == null || board[0].length == 0) {
             return;

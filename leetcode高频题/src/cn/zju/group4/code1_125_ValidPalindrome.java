@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code1_125 {
+public class code1_125_ValidPalindrome {
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {
             return true;

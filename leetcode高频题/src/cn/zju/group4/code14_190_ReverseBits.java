@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code14_190 {
+public class code14_190_ReverseBits {
     public int reverseBits(int n) {
         n = (n >>> 16) | (n << 16);
         n = ((n & 0xff00ff00) >>> 8) | ((n & 0x00ff00ff) << 8);

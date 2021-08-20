@@ -3,7 +3,7 @@ package cn.zju.group4;
 import java.util.HashMap;
 import java.util.Map;
 
-public class code10_166 {
+public class code10_166_FractionToRecurringDecimal {
     public String fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) {
             return "0";

@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code6_148 {
+public class code6_148_SortList {
     public class ListNode {
         int val;
         ListNode next;

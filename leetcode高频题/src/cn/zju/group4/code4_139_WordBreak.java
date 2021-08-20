@@ -2,7 +2,7 @@ package cn.zju.group4;
 
 import java.util.List;
 
-public class code4_139 {
+public class code4_139_WordBreak {
     public class Node {
         boolean end;
         Node[] nexts;

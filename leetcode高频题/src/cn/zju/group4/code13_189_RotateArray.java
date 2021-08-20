@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code13_189 {
+public class code13_189_RotateArray {
     public void rotate(int[] nums, int k) {
         k %= nums.length;
         reverse(nums,0,nums.length - 1);

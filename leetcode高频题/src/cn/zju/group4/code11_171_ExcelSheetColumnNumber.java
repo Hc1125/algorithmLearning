@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code11_171 {
+public class code11_171_ExcelSheetColumnNumber {
     public int titleToNumber(String columnTitle) {
         char[] str = columnTitle.toCharArray();
         int ans = 0;

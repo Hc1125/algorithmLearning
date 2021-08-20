@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code17_204 {
+public class code17_204_CountPrimes {
     public int countPrimes(int n) {
         if (n < 3) {
             return 0;

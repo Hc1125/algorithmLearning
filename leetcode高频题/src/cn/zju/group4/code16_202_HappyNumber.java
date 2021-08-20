@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code16_202 {
+public class code16_202_HappyNumber {
     // 快乐数一定会经过1 或 4，经过1的就是快乐数。
     public boolean isHappy(int n) {
         while (n != 1 && n != 4) {

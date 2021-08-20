@@ -3,7 +3,7 @@ package cn.zju.group4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class code5_140 {
+public class code5_140_WordBreakII {
     public static class Node {
         public String path;
         public boolean end;

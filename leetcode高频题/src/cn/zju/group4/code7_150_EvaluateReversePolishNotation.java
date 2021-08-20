@@ -3,7 +3,7 @@ package cn.zju.group4;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class code7_150 {
+public class code7_150_EvaluateReversePolishNotation {
     public int evalRPN(String[] tokens) {
         Deque<Integer> stack = new ArrayDeque<>();
         for (String str : tokens) {

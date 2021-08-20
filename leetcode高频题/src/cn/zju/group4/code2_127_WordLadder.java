@@ -2,7 +2,7 @@ package cn.zju.group4;
 
 import java.util.*;
 
-public class code2_127 {
+public class code2_127_WordLadder {
     public int ladderLength1(String start, String to, List<String> wordList) {
         wordList.add(start);
         HashMap<String, ArrayList<String>> nexts = getNexts(wordList);

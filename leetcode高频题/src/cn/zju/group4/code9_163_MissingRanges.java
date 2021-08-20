@@ -3,7 +3,7 @@ package cn.zju.group4;
 import java.util.ArrayList;
 import java.util.List;
 
-public class code9_163 {
+public class code9_163_MissingRanges {
     public static List<String> findMissingRanges(int[] nums, int lower, int upper) {
         List<String> ans = new ArrayList<>();
         for (int num : nums) {

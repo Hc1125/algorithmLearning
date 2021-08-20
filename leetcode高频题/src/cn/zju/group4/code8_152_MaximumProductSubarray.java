@@ -1,6 +1,6 @@
 package cn.zju.group4;
 
-public class code8_152 {
+public class code8_152_MaximumProductSubarray {
     public int maxProduct(int[] nums) {
         int ans = nums[0];
         int min = nums[0];
