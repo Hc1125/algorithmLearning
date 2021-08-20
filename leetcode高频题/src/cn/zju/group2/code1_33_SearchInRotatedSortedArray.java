@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code1_33 {
+public class code1_33_SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {
         int n = nums.length;
         if (n == 0) {

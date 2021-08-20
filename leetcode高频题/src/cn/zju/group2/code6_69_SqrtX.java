@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code6_69 {
+public class code6_69_SqrtX {
     public int mySqrt(int x) {
         if (x == 0) {
             return 0;

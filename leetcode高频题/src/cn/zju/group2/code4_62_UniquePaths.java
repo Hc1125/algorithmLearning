@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code4_62 {
+public class code4_62_UniquePaths {
     public int uniquePaths(int m, int n) {
         int part = n > m ? n - 1 : m - 1;
         int all = m + n - 2;

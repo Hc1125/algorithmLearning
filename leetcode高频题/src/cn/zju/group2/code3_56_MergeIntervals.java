@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class code3_56 {
+public class code3_56_MergeIntervals {
     public int[][] merge(int[][] intervals) {
         if (intervals.length == 0) {
             return new int[0][0];

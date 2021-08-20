@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code7_73 {
+public class code7_73_SetMatrixZeroes {
     public void setZeroes(int[][] matrix) {
         boolean row0Zero = false;
         boolean col0Zero = false;

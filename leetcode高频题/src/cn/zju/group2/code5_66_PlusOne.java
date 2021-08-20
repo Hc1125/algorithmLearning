@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code5_66 {
+public class code5_66_PlusOne {
     public int[] plusOne(int[] digits) {
         int n = digits.length;
         for (int i = n - 1; i >= 0; i--) {

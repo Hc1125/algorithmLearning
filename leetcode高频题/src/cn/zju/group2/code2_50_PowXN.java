@@ -1,6 +1,6 @@
 package cn.zju.group2;
 
-public class code2_50 {
+public class code2_50_PowXN {
     public double myPow(double x, int n) {
         if (n == 0) {
             return 1D;
