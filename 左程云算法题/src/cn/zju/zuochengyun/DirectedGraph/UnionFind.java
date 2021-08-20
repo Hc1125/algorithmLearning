@@ -1,9 +1,6 @@
 package cn.zju.zuochengyun.DirectedGraph;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class UnionFind {
     public static class Node<V> {
@@ -58,4 +55,46 @@ public class UnionFind {
             }
         }
     }
+    // 简易版
+    class UnionFindEasy {
+        int[] parent;
+        int[] size;
+        int n ;
+        int setCount;
+        public UnionFindEasy(int n){
+            this.n = n;
+            this.setCount = n;
+            parent = new int[n];
+            size = new int[n];
+            Arrays.fill(size,1);
+            for (int i = 0; i < n; i++) {
+                parent[i] = i;
+            }
+        }
+        public int find(int x){
+            return parent[x] == x ? x : (parent[x] = find(parent[x]));
+        }
+        public boolean union(int x, int y){
+            x = find(x);
+            y = find(y);
+            if(x == y){
+                return false;
+            }
+            if(size[x] < size[y]){
+                int temp = x;
+                x = y;
+                y = temp;
+            }
+            parent[y] = x;
+            size[x] += size[y];
+            setCount--;
+            return true;
+        }
+        public boolean isConnected(int x, int y){
+            x = find(x);
+            y = find(y);
+            return x == y;
+        }
+    }
 }
+

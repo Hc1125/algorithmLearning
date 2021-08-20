@@ -6,6 +6,23 @@ import java.util.Deque;
 import java.util.concurrent.DelayQueue;
 
 public class code8_PartitionAndQuickSort {
+
+    public static void quickSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        process(arr, 0 , arr.length - 1);
+    }
+    public static void process(int[] arr, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        swap(arr, l + (int)(Math.random() * (r - l + 1)), r);
+        int[] equalArea = netherlandsFlag(arr, l, r);
+        process(arr, l, equalArea[0]- 1);
+        process(arr, equalArea[1] + 1, r);
+    }
+
     public static void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
@@ -33,35 +50,6 @@ public class code8_PartitionAndQuickSort {
         swap(arr, more, r);
         return new int[]{less + 1, more};
     }
-    public static void quickSort2(int[] arr) {
-        if (arr == null || arr.length < 2) {
-            return;
-        }
-        process2(arr, 0 , arr.length - 1);
-    }
-    public static void process2(int[] arr, int l, int r) {
-        if (l >= r) {
-            return;
-        }
-        int[] equalArea = netherlandsFlag(arr, l, r);
-        process2(arr, l, equalArea[0]- 1);
-        process2(arr, equalArea[1] + 1, r);
-    }
-    public static void quickSort3(int[] arr) {
-        if (arr == null || arr.length < 2) {
-            return;
-        }
-        process3(arr, 0 , arr.length - 1);
-    }
-    public static void process3(int[] arr, int l, int r) {
-        if (l >= r) {
-            return;
-        }
-        swap(arr, l + (int)(Math.random() * (r - l + 1)), r);
-        int[] equalArea = netherlandsFlag(arr, l, r);
-        process2(arr, l, equalArea[0]- 1);
-        process2(arr, equalArea[1] + 1, r);
-    }
 
 
 
@@ -75,7 +63,7 @@ public class code8_PartitionAndQuickSort {
         }
     }
     // 非递归版本
-    public static void quickSort4(int[] arr) {
+    public static void quickSort2(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
