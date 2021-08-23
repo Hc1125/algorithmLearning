@@ -48,6 +48,14 @@ public class code14_LargestComponentSizebyCommonFactor {
         public boolean isConnected(int x, int y) {
             return find(x) == find(y);
         }
+
+        public int maxSize() {
+            int ans = 0;
+            for (int s : size) {
+                ans = Math.max(ans, s);
+            }
+            return ans;
+        }
     }
     // arr中没有小于1的数
     // 利用并查集O(N ^ 2)遍历构建集合
