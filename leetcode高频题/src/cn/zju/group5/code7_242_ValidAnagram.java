@@ -7,7 +7,7 @@ public class code7_242_ValidAnagram {
         }
         char[] str1 = s.toCharArray();
         char[] str2 = t.toCharArray();
-        int[] count = new int[256];
+        int[] count = new int[26];
         for (char c : str1) {
             count[c - 'a']++;
         }
