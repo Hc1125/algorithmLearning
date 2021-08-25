@@ -8,7 +8,7 @@ public class code5_FindFirstIntersectNode {
             return null;
         }
         Node n1 = head.next;
-        Node n2 = head.next;
+        Node n2 = head.next.next;
         while(n1 != n2){
             if(n2.next == null || n2.next.next == null){
                 return null;

@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/leetcode算法题.iml" filepath="$PROJECT_DIR$/leetcode算法题.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode高频题/leetcode高频题.iml" filepath="$PROJECT_DIR$/leetcode高频题/leetcode高频题.iml" />
       <module fileurl="file://$PROJECT_DIR$/剑指Offer题目/剑指Offer题目.iml" filepath="$PROJECT_DIR$/剑指Offer题目/剑指Offer题目.iml" />
+      <module fileurl="file://$PROJECT_DIR$/大厂笔试题/大厂笔试题.iml" filepath="$PROJECT_DIR$/大厂笔试题/大厂笔试题.iml" />
       <module fileurl="file://$PROJECT_DIR$/左程云算法题/左程云算法题.iml" filepath="$PROJECT_DIR$/左程云算法题/左程云算法题.iml" />
     </modules>
   </component>

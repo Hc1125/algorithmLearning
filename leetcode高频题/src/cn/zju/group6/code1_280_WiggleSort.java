@@ -1,6 +1,6 @@
 package cn.zju.group6;
 
-public class code1_WiggleSort {
+public class code1_280_WiggleSort {
     public void wiggleSort(int[] nums) {
         int n = nums.length;
         for (int i = 0; i < n; i++) {
