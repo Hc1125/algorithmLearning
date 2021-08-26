@@ -1,5 +1,7 @@
 package cn.zju.zuochengyun.Practice4;
 
+import java.util.Arrays;
+
 /**
  * 给定一个数组arr，长度为N且每个值都是正数，代表N个人的体重。再给定个正数limit,代表一艘船的载重。
  * 以下是坐船规则:
@@ -8,8 +10,22 @@ package cn.zju.zuochengyun.Practice4;
  * 返回如果同时让这N个人过河最少需要几条船。
  */
 public class code4_MinBoat {
+    // 最优解
+    public static int minBoat1(int[] arr, int limit) {
+        Arrays.sort(arr);
+        int light = 0, heavy = arr.length - 1;
+        int ans = 0;
+        while (light <= heavy) {
+            if (arr[light] + arr[heavy] <= limit) {
+                light++;
+            }
+            heavy--;
+            ans++;
+        }
+        return ans;
+    }
     // 请保证arr有序
-    public static int minBoat(int[] arr, int limit) {
+    public static int minBoat2(int[] arr, int limit) {
         if (arr == null || arr.length == 0) {
             return 0;
         }
