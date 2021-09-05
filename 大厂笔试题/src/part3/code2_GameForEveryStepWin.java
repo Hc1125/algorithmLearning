@@ -28,10 +28,10 @@ public class code2_GameForEveryStepWin {
 	// cur -> 26
 	// next -> 13
 	// 26 * 341 * 26 * 13 -> ? * (10 ^ 5)
-	public static int f(int[] cands, int[] sroces, int index, int hold, int cur, int next) {
+	public static int f(int[] cands, int[] scores, int index, int hold, int cur, int next) {
 		if (index == 25) { // 最后一张
 			int all = hold + cur + cands[index] * 3;
-			if (all <= sroces[index]) {
+			if (all <= scores[index]) {
 				return -1;
 			}
 			return all;
@@ -40,14 +40,14 @@ public class code2_GameForEveryStepWin {
 		// 保留
 		int all1 = hold + cur + cands[index];
 		int p1 = -1;
-		if (all1 > sroces[index]) {
-			p1 = f(cands, sroces, index + 1, hold + cands[index], next, 0);
+		if (all1 > scores[index]) {
+			p1 = f(cands, scores, index + 1, hold + cands[index], next, 0);
 		}
 		// 爆发
 		int all2 = hold + cur + cands[index] * 3;
 		int p2 = -1;
-		if (all2 > sroces[index]) {
-			p2 = f(cands, sroces, index + 1, hold, next + cands[index] * 3, cands[index] * 3);
+		if (all2 > scores[index]) {
+			p2 = f(cands, scores, index + 1, hold, next + cands[index] * 3, cands[index] * 3);
 		}
 		return Math.max(p1, p2);
 	}
