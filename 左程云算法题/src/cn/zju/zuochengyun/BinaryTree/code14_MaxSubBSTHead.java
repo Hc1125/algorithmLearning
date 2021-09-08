@@ -37,8 +37,8 @@ public class code14_MaxSubBSTHead {
                 maxSubBSTSize = rightInfo.maxSubBSTSize;
             }
         }
-        if((leftInfo == null ? true : (leftInfo.maxSubBSTHead == head.left && leftInfo.max < head.val))
-        && (rightInfo == null ? true : (rightInfo.maxSubBSTHead == head.right && rightInfo.min > head.val))){
+        if((leftInfo == null || (leftInfo.maxSubBSTHead == head.left && leftInfo.max < head.val))
+        && (rightInfo == null || (rightInfo.maxSubBSTHead == head.right && rightInfo.min > head.val))){
             maxSubBSTHead = head;
             maxSubBSTSize = (leftInfo == null ? 0 : leftInfo.maxSubBSTSize) +
                     (rightInfo == null ? 0 : rightInfo.maxSubBSTSize) + 1;

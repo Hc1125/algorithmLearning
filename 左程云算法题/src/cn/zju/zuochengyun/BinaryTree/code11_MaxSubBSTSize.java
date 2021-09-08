@@ -45,13 +45,13 @@ public class code11_MaxSubBSTSize {
         }
         boolean isAllBST = false;
         if(
-                (leftInfo == null ? true : leftInfo.isAllBST)
+                (leftInfo == null || leftInfo.isAllBST)
                 &&
-                (rightInfo == null ? true : rightInfo.isAllBST)
+                (rightInfo == null || rightInfo.isAllBST)
                 &&
-                (leftInfo == null ? true : leftInfo.max < head.val)
+                (leftInfo == null || leftInfo.max < head.val)
                 &&
-                (rightInfo == null ? true : rightInfo.min > head.val)
+                (rightInfo == null || rightInfo.min > head.val)
         ){
             maxSubBSTSize =
                     (leftInfo == null ? 0 : leftInfo.maxSubBSTSize)
