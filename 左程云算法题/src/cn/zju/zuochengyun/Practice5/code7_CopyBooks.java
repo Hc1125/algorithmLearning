@@ -2,7 +2,7 @@ package cn.zju.zuochengyun.Practice5;
 
 import java.util.Arrays;
 
-public class code7_copyBooks {
+public class code7_CopyBooks {
     public int copyBooks(int[] pages, int k) {
         if (pages == null || pages.length == 0) {
             return 0;
