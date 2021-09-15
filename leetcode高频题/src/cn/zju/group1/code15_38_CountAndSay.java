@@ -1,9 +1,6 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.group1;
 
-/**
- * https://leetcode-cn.com/problems/count-and-say/
- */
-public class code5_CountAndSay {
+public class code15_38_CountAndSay {
 
 	public static String countAndSay(int n) {
 		if (n < 1) {
@@ -19,13 +16,13 @@ public class code5_CountAndSay {
 			if (last[i - 1] == last[i]) {
 				times++;
 			} else {
-				ans.append(String.valueOf(times));
-				ans.append(String.valueOf(last[i - 1]));
+				ans.append(times);
+				ans.append(last[i - 1]);
 				times = 1;
 			}
 		}
-		ans.append(String.valueOf(times));
-		ans.append(String.valueOf(last[last.length - 1]));
+		ans.append(times);
+		ans.append(last[last.length - 1]);
 		return ans.toString();
 	}
 

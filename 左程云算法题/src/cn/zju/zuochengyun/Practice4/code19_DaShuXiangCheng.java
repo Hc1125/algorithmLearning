@@ -1,6 +1,6 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.zuochengyun.Practice4;
 
-public class code8_DaShuXiangCheng {
+public class code19_DaShuXiangCheng {
     public static int[] multiply(int[] ints1, int[] ints2) {
         int[] result = new int[ints1.length + ints2.length + 1];
         for (int i = 0; i < ints1.length; i++) {

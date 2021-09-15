@@ -95,7 +95,7 @@ public class code15_PickBands {
 		} else {
 			if (index != size) {
 				f(programs, size, index + 1, status, cost, rest, map);
-				int pick = 0 | (1 << programs[index][0]) | (1 << programs[index][1]);
+				int pick = (1 << programs[index][0]) | (1 << programs[index][1]);
 				if ((pick & status) == 0) {
 					f(programs, size, index + 1, status | pick, cost + programs[index][2], rest - 1, map);
 				}

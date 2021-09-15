@@ -1,4 +1,4 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.zuochengyun.Practice4;
 
 import java.util.Comparator;
 import java.util.TreeSet;
@@ -6,7 +6,7 @@ import java.util.TreeSet;
 /**
  * 多个排序数组中取出一个数字，构成一个新数组的范围（最小值到最大值）的最小值
  */
-public class code9_MinRange {
+public class code20_MinRange {
     public static int minRange(int[][] matrix) {
         for (int[] arr : matrix) {
             if (arr == null || arr.length == 0) {

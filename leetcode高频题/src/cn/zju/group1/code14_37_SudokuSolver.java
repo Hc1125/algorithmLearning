@@ -1,9 +1,6 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.group1;
 
-/**
- * https://leetcode-cn.com/problems/sudoku-solver/
- */
-public class code4_SudokuSolver {
+public class code14_37_SudokuSolver {
 
 	public static void solveSudoku(char[][] board) {
 		boolean[][] row = new boolean[9][10];

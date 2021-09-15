@@ -1,11 +1,11 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.zuochengyun.Practice4;
 
 
 
 import java.io.*;
 import java.util.*;
 
-public class code6_merchantsBankContest {
+public class code17_merchantsBankContest {
     // 客户经理模型
     public static class AccountManager {
         int no;       //  编号

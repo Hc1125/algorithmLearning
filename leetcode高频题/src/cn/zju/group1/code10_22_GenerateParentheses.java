@@ -1,13 +1,9 @@
-package cn.zju.zuochengyun.Practice4;
+package cn.zju.group1;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 给定n对左右括号（）
- * 返回由多少种合法排列表示括号的方式
- */
-public class code20_GenerateParentheses {
+public class code10_22_GenerateParentheses {
 
 	public static List<String> generateParenthesis(int n) {
 		char[] path = new char[n << 1];

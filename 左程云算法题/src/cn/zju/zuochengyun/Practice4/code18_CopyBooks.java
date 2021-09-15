@@ -1,8 +1,8 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.zuochengyun.Practice4;
 
 import java.util.Arrays;
 
-public class code7_CopyBooks {
+public class code18_CopyBooks {
     public int copyBooks(int[] pages, int k) {
         if (pages == null || pages.length == 0) {
             return 0;

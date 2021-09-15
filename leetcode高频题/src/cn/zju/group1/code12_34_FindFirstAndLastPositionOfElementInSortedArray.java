@@ -1,6 +1,6 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.group1;
 
-public class code2_FindFirstAndLastPositionOfElementInSortedArray {
+public class code12_34_FindFirstAndLastPositionOfElementInSortedArray {
 
 	public static int[] searchRange(int[] nums, int target) {
 		if (nums == null || nums.length == 0) {
@@ -29,5 +29,6 @@ public class code2_FindFirstAndLastPositionOfElementInSortedArray {
 		}
 		return ans;
 	}
+
 
 }

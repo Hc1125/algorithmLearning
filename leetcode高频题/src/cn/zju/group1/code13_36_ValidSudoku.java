@@ -1,9 +1,6 @@
-package cn.zju.zuochengyun.Practice5;
+package cn.zju.group1;
 
-/**
- * https://leetcode-cn.com/problems/valid-sudoku/
- */
-public class code3_ValidSudoku {
+public class code13_36_ValidSudoku {
 
 	public static boolean isValidSudoku(char[][] board) {
 		boolean[][] row = new boolean[9][10];
