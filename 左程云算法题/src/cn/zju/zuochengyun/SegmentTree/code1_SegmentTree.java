@@ -60,6 +60,9 @@ public class code1_SegmentTree {
         // 在初始化阶段，先把sum数组，填好
         // 在arr[l~r]范围上，去build，1~N，
         // rt : 这个范围在sum中的下标
+        // l = 1(固定)
+        // r = size(你设置的线段树大小)
+        // rt = 1(固定)
         public void build(int l, int r, int rt) {
             if (l == r) {
                 sum[rt] = arr[l];
@@ -74,6 +77,9 @@ public class code1_SegmentTree {
 
         // L~R  所有的值变成C
         // l~r  rt
+        // l = 1(固定)
+        // r = size(你设置的线段树大小)
+        // rt = 1(固定)
         public void update(int L, int R, int C, int l, int r, int rt) {
             if (L <= l && r <= R) {
                 update[rt] = true;
@@ -96,6 +102,9 @@ public class code1_SegmentTree {
 
         // L~R, C 任务！
         // rt，l~r
+        // l = 1(固定)
+        // r = size(你设置的线段树大小)
+        // rt = 1(固定)
         public void add(int L, int R, int C, int l, int r, int rt) {
             // 任务如果把此时的范围全包了！
             if (L <= l && r <= R) {
@@ -118,6 +127,9 @@ public class code1_SegmentTree {
         }
 
         // 1~6 累加和是多少？ 1~8 rt
+        // l = 1(固定)
+        // r = size(你设置的线段树大小)
+        // rt = 1(固定)
         public long query(int L, int R, int l, int r, int rt) {
             if (L <= l && r <= R) {
                 return sum[rt];
