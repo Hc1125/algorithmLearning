@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
  * map[i][j] == 2，代表(i,j)是障碍，无法渡过
  * 每一步上、下、左、右都能走，返回从左上角走到右下角最小代价是多少，如果无法到达返回-1
  */
-public class code4_WalkToEnd {
+public class code4_WalkToEnd_AStarAlgorithm {
 
 	public static int minCost(int[][] map) {
 		if (map[0][0] == 2) {
