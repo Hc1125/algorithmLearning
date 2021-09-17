@@ -10,24 +10,22 @@ import java.util.Map;
  */
 public class code13_LogestNoRepeatSubString {
     public static int longestNoRepeatSubString(String s) {
-        if (s == null || s.length() < 1) {
+        if (s == null || s.equals("")) {
             return 0;
         }
-        int[] dp = new int[s.length()];
-        // dp[i]含义：必须以i位置字符为结尾的最长无重复子串长度
-        Map<Character, Integer> map = new HashMap<>();
-        dp[0] = 1;
-        map.put(s.charAt(0), 0);
+        char[] str = s.toCharArray();
+        int[] map = new int[256];
+        for (int i = 0; i < 256; i++) {
+            map[i] = -1;
+        }
+        map[str[0]] = 0;
+        int N = str.length;
         int ans = 1;
-        for (int i = 1; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))) {
-                int begin = Math.max(map.get(s.charAt(i)), i - 1 - dp[i - 1]);
-                dp[i] = i - begin;
-            } else {
-                dp[i] = dp[i - 1] + 1;
-            }
-            map.put(s.charAt(i), i);
-            ans = Math.max(dp[i], ans);
+        int pre = 1;
+        for (int i = 1; i < N; i++) {
+            pre = Math.min(i - map[str[i]], pre + 1);
+            ans = Math.max(ans, pre);
+            map[str[i]] = i;
         }
         return ans;
     }
