@@ -29,6 +29,7 @@ public class code9_FreedomTrail {
 		return process(0, 0, str, map, N, dp);
 	}
 
+
 	// 电话里：指针指着的上一个按键preButton
 	// 目标里：此时要搞定哪个字符？keyIndex
 	// map : key 一种字符 value: 哪些位置拥有这个字符
@@ -59,4 +60,25 @@ public class code9_FreedomTrail {
 		return Math.min(Math.abs(i1 - i2), Math.min(i1, i2) + size - Math.max(i1, i2));
 	}
 
+	// 在leetcode测试案例中效果较差
+	public static int dp(char[] str, HashMap<Character, ArrayList<Integer>> map, int N) {
+		int M = str.length;
+		int[][] dp = new int[N][M + 1];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				dp[i][j] = -1;
+			}
+		}
+		for (int j = M - 1; j >= 0; j--) {
+			for (int i = 0; i < N; i++) {
+				ArrayList<Integer> nextPositions = map.get(str[j]);
+				int ans = Integer.MAX_VALUE;
+				for (int next : nextPositions) {
+					ans = Math.min(ans, dial(i, next, N) + 1 + dp[next][j + 1]);
+				}
+				dp[i][j] = ans;
+			}
+		}
+		return dp[0][0];
+	}
 }
