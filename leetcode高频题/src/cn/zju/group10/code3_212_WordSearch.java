@@ -20,7 +20,7 @@ import java.util.List;
  * words = "oath", "pea", "eat", "rain"
  * 输出"eat", "oath"
  */
-public class code2_212_WordSearch {
+public class code3_212_WordSearch {
     public static class TrieNode {
         public TrieNode[] nexts;
         public int pass;
