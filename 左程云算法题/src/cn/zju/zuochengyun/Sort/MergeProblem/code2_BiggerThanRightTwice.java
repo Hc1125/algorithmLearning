@@ -1,6 +1,6 @@
-package cn.zju.zuochengyun.Sort;
+package cn.zju.zuochengyun.Sort.MergeProblem;
 
-public class code6_BiggerThanRightTwice {
+public class code2_BiggerThanRightTwice {
     public static int biggerThanRightTwice(int[] arr) {
         if (arr == null || arr.length < 2) {
             return 0;

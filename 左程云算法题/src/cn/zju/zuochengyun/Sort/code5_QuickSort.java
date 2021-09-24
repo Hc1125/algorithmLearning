@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 
-public class code8_QuickSort {
+public class code5_QuickSort {
     public static void main(String[] args) {
         int[] arr = {2,4,7,5,1,32,11,7};
         quickSort(arr);

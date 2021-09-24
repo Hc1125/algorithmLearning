@@ -1,6 +1,6 @@
 package cn.zju.zuochengyun.Sort;
 
-public class code9_CountSort {
+public class code6_CountSort {
     public static void countSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;

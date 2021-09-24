@@ -19,6 +19,6 @@ package cn.zju.zuochengyun.Sort;
  * 然后一直维护小根堆至遍历完所有数组O(N * logK)
  * 然后再排序小根堆O(K * log)K
  */
-public class code12_TopK {
+public class code10_TopK {
 
 }

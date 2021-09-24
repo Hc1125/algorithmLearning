@@ -1,6 +1,6 @@
-package cn.zju.zuochengyun.Sort;
+package cn.zju.zuochengyun.Sort.MergeProblem;
 
-public class code5_SmallSum {
+public class code1_SmallSum {
     public static int smallSum(int[] arr) {
         if (arr == null || arr.length < 2) {
             return 0;

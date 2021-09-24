@@ -1,6 +1,6 @@
 package cn.zju.zuochengyun.Sort;
 
-public class code13_HeapSort {
+public class code8_HeapSort {
     public static void heapSort(int[] arr){
         if(arr == null || arr.length < 2){
             return;

@@ -54,6 +54,7 @@ public class code4_MergeSort {
                 merge(arr, L, M, R);
                 L = R + 1;
             }
+            // 防止溢出
             if (mergeSize > N / 2) {
                 break;
             }

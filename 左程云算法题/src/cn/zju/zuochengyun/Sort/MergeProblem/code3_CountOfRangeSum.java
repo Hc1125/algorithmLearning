@@ -1,4 +1,4 @@
-package cn.zju.zuochengyun.Sort;
+package cn.zju.zuochengyun.Sort.MergeProblem;
 
 /**
  * 区间和的个数
@@ -7,7 +7,7 @@ package cn.zju.zuochengyun.Sort;
  * 区间和 S(i, j) 表示在 nums 中，位置从 i 到 j 的元素之和，包含 i 和 j (i ≤ j)。
 
  */
-public class code7_CountOfRangeSum {
+public class code3_CountOfRangeSum {
     public static int countRangeSum(int[] nums, int lower, int upper) {
         if (nums == null || nums.length == 0) {
             return 0;

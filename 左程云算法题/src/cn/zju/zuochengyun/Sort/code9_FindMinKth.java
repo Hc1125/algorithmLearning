@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * 找到无序数组中第k小的数字
  */
-public class code11_FindMinKth {
+public class code9_FindMinKth {
 
     // k >= 1
     // 迭代版本

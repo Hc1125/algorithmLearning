@@ -1,6 +1,6 @@
 package cn.zju.zuochengyun.Sort;
 
-public class code10_RadixSort {
+public class code7_RadixSort {
     // only for no-negative value
     public static void radixSort(int[] arr) {
         if (arr == null || arr.length < 2) {

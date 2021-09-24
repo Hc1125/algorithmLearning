@@ -24,7 +24,7 @@ public class code1_SegmentTree {
                 arr[i] = origin[i - 1];
             }
             sum = new int[MAXN << 2]; // 用来支持脑补概念中，某一个范围的累加和信息
-            lazy = new int[MAXN << 2]; // 用来支持脑补概念中，某一个范围沒有往下傳遞的纍加任務
+            lazy = new int[MAXN << 2]; // 用来支持脑补概念中，某一个范围沒有往下传达的累加任务
             change = new int[MAXN << 2]; // 用来支持脑补概念中，某一个范围有没有更新操作的任务
             update = new boolean[MAXN << 2]; // 用来支持脑补概念中，某一个范围更新任务，更新成了什么
         }
