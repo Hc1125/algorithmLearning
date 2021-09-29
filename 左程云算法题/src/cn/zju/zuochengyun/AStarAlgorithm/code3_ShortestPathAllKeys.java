@@ -2,7 +2,7 @@ package cn.zju.zuochengyun.AStarAlgorithm;
 
 import java.util.*;
 
-public class code3_shortestPathAllKeys {
+public class code3_ShortestPathAllKeys {
     int INF = Integer.MAX_VALUE;
     String[] grid;
     int R, C;
