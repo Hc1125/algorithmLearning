@@ -4,6 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 给定一个不为空的二叉搜索树和一个目标值 target，请在该二叉搜索树中找到最接近目标值 target 的 k 个值。
+ *
+ * 注意：
+ * 给定的目标值 target 是一个浮点数
+ * 你可以默认 k 值永远是有效的，即 k ≤ 总结点数
+ * 题目保证该二叉搜索树中只会存在一种 k 个值集合最接近目标值
+ */
 public class code2_272_ClosestBinarySearchTreeValueII {
 
 	public static class TreeNode {

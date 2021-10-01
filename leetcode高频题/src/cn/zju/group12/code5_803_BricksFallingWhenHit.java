@@ -1,7 +1,7 @@
 package cn.zju.group12;
 
 // 本题测试链接 : https://leetcode.com/problems/bricks-falling-when-hit/
-public class code3_803_BricksFallingWhenHit {
+public class code5_803_BricksFallingWhenHit {
 
 	private int rows;
 	private int cols;
