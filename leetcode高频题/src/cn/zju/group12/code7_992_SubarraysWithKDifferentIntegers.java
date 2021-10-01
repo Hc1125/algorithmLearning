@@ -2,7 +2,7 @@ package cn.zju.group12;
 
 import java.util.HashMap;
 
-public class code6_992_SubarraysWithKDifferentIntegers {
+public class code7_992_SubarraysWithKDifferentIntegers {
 
 	// nums 数组，题目规定，nums中的数字，不会超过nums的长度
 	// [ ]长度为5，0~5
