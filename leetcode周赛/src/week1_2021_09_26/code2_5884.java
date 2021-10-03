@@ -1,4 +1,4 @@
-package week1_2021_9_26;
+package week1_2021_09_26;
 
 import java.util.*;
 
