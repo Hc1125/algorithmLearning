@@ -1,7 +1,6 @@
 package week4_2021_10_10;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeSet;
 
 /**
@@ -11,47 +10,45 @@ import java.util.TreeSet;
  * 请你返回 最小 的数组和之差。
  */
 public class code2_5897 {
-    public int minimumDifference(int[] nums) {
-        Map<Integer, TreeSet<Integer>> left = new HashMap<>();
-        Map<Integer, TreeSet<Integer>> right = new HashMap<>();
-        int min = Integer.MAX_VALUE;
-        int total = 0;
-        int n = nums.length / 2;
-        for (int i = 0; i < 2 * n; i++) {
-            total += nums[i];
-            if (i < n) {
-                left.put(i + 1, new TreeSet<>());
-            } else {
-                right.put(i - n + 1, new TreeSet<>());
-            }
+    public static int minimumDifference(int[] arr) {
+        int size = arr.length;
+        int half = size >> 1;
+        HashMap<Integer, TreeSet<Integer>> lmap = new HashMap<>();
+        process(arr, 0, half, 0, 0, lmap);
+        HashMap<Integer, TreeSet<Integer>> rmap = new HashMap<>();
+        process(arr, half, size, 0, 0, rmap);
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
         }
-        dfs(nums, 0, 0, 0, n, left);
-        dfs(nums, 0, 0, n, 2 * n, right);
-        for (int i = 1; i < n; i++) {
-            TreeSet<Integer> set = left.get(i);
-            for (int leftSum : set) {
-                Integer rightSum = right.get(n - i).ceiling(total / 2 - leftSum);
+        sum >>= 1;
+        int ans = Integer.MAX_VALUE;
+        for (int leftNum : lmap.keySet()) {
+            for (int leftSum : lmap.get(leftNum)) {
+                Integer rightSum = rmap.get(half - leftNum).floor(sum - leftSum);
                 if (rightSum != null) {
-                    int sum = leftSum + rightSum;
-                    min = Math.min(min, Math.abs(sum * 2 - total));
-                }
-                if (min == 0) {
-                    return 0;
+                    int pickSum = leftSum + rightSum;
+                    int restSum = sum - pickSum;
+                    ans = Math.min(ans, restSum - pickSum);
+                    if (ans == 0) {
+                        return ans;
+                    }
                 }
             }
         }
-        TreeSet<Integer> set = left.get(n);
-        for (int sum : set) {
-            min = Math.min(min, Math.abs(sum * 2 - total));
-        }
-        return min;
+        return ans;
     }
-    public void dfs(int[] nums, int sum, int count, int idx, int limit, Map<Integer, TreeSet<Integer>> visited) {
-        if (visited.containsKey(count)) {
-            visited.get(count).add(sum);
+
+    public static void process(int[] arr, int index, int end, int pick, int sum,
+                               HashMap<Integer, TreeSet<Integer>> map) {
+        if (index == end) {
+            if (!map.containsKey(pick)) {
+                map.put(pick, new TreeSet<>());
+            }
+            map.get(pick).add(sum);
+        } else {
+            process(arr, index + 1, end, pick, sum, map);
+            process(arr, index + 1, end, pick + 1, sum + arr[index], map);
         }
-        if (idx == limit) return;
-        dfs(nums, sum + nums[idx], count + 1, idx + 1, limit, visited);
-        dfs(nums, sum, count, idx + 1, limit, visited);
     }
 }

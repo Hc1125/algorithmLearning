@@ -1,35 +1,35 @@
 package cn.zju.zuochengyun.Practice4;
 
 public class code19_DaShuXiangCheng {
-    public static int[] multiply(int[] ints1, int[] ints2) {
-        int[] result = new int[ints1.length + ints2.length + 1];
-        for (int i = 0; i < ints1.length; i++) {
-            for (int j = 0; j < ints2.length; j++) {
-                result[i + j] += ints1[i] * ints2[j];
+    public static String multiply(String num1, String num2) {
+        if (num1.equals("0") || num2.equals("0")) {
+            return "0";
+        }
+        int m = num1.length(), n = num2.length();
+        int[] ansArr = new int[m + n];
+        for (int i = m - 1; i >= 0; i--) {
+            int x = num1.charAt(i) - '0';
+            for (int j = n - 1; j >= 0; j--) {
+                int y = num2.charAt(j) - '0';
+                ansArr[i + j + 1] += x * y;
             }
         }
-        boolean end = false;
-        int endPos = 0;
-        for (int i = result.length - 1; i > 0; i--) {
-            if (!end && result[i] != 0) {
-                end = true;
-                endPos = i;
-            }
-            result[i - 1] += result[i] / 10;
-            result[i] %= 10;
+        for (int i = m + n - 1; i > 0; i--) {
+            ansArr[i - 1] += ansArr[i] / 10;
+            ansArr[i] %= 10;
         }
+        int index = ansArr[0] == 0 ? 1 : 0;
         StringBuilder ans = new StringBuilder();
-        for (int i = 0; i <= endPos; i++) {
-            ans.append(result[i]);
+        while (index < m + n) {
+            ans.append(ansArr[index++]);
         }
-        System.out.println(ans);
-        return result;
+        return ans.toString();
     }
 
     public static void main(String[] args) {
-        int[] a = {1,2,3,4,5};
-        int[] b = {6,7,8,9};
-        System.out.println(((long)12345 * 6789));
-        multiply(a, b);
+        String a = "1234500";
+        String b = "6789";
+        System.out.println(((long)1234500 * 6789));
+        System.out.println(multiply(a, b));
     }
 }

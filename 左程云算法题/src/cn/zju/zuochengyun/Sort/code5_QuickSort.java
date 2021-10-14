@@ -36,9 +36,6 @@ public class code5_QuickSort {
         arr[j] = tmp;
     }
     public static int[] netherlandsFlag(int[] arr, int l, int r, int pivot) {
-        if (l == r) {
-            return new int[]{l, r};
-        }
         int less = l - 1;
         int more = r + 1;
         int cur = l;

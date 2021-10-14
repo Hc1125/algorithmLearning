@@ -1,13 +1,6 @@
-package cn.zju.zuochengyun.Sort.MergeProblem;
+package cn.zju.leetcode;
 
-/**
- * 区间和的个数
- * 给你一个整数数组 nums 以及两个整数 lower 和 upper 。
- * 求数组中，值位于范围 [lower, upper] （包含 lower 和 upper）之内的 区间和的个数 。
- * 区间和 S(i, j) 表示在 nums 中，位置从 i 到 j 的元素之和，包含 i 和 j (i ≤ j)。
-
- */
-public class code3_CountOfRangeSum {
+public class code10_327 {
     public int countRangeSum(int[] nums, int lower, int upper) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -20,17 +13,19 @@ public class code3_CountOfRangeSum {
         return count(sum, 0, sum.length - 1, lower, upper);
     }
 
-    public int count(long[] sum, int L, int R, int lower, int upper) {
-        if (L == R) {
-            if (sum[L] >= lower && sum[L] <= upper) {
+    public int count(long[] sum, int l, int r, int lower, int upper) {
+        if (l == r) {
+            if (sum[l] >= lower && sum[l] <= upper) {
                 return 1;
             } else {
                 return 0;
             }
         }
-        int M = L + ((R - L) >> 1);
-        return count(sum, L, M, lower, upper) + count(sum, M + 1, R, lower, upper)
-                + merge(sum, L, M, R, lower, upper);
+        int mid = l + ((r - l) >> 1);
+        int leftPart = count(sum, l, mid, lower, upper);
+        int rightPart = count(sum, mid + 1, r, lower, upper);
+        int merge = merge(sum, l, mid, r, lower, upper);
+        return leftPart + rightPart + merge;
     }
 
     public int merge(long[] arr, int L, int M, int R, int lower, int upper) {
