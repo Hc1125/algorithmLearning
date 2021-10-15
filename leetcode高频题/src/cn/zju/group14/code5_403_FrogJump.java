@@ -3,7 +3,7 @@ package cn.zju.group14;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class code2_403_FrogJump {
+public class code5_403_FrogJump {
 
 	public static boolean canCross1(int[] stones) {
 		HashSet<Integer> set = new HashSet<>();
