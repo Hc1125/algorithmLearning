@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class code7_CountOfSmallerNumbersAfterSelf {
+public class code8_CountOfSmallerNumbersAfterSelf {
 
 	public static int max = 200000;
 	public static int[] left = new int[max];

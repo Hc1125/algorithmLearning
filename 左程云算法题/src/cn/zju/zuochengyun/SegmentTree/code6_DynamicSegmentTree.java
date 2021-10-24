@@ -1,62 +1,121 @@
 package cn.zju.zuochengyun.SegmentTree;
 
+// 同时支持范围增加 + 范围修改 + 范围查询的动态开点线段树（累加和）
+// 真的用到！才去建立
+// 懒更新，及其所有的东西，和普通线段树，没有任何区别！
 public class code6_DynamicSegmentTree {
 
+	public static class Node {
+		public int sum;
+		public int lazy;
+		public int change;
+		public boolean update;
+		public Node left;
+		public Node right;
+	}
+
 	public static class DynamicSegmentTree {
-		public int[] left;
-		public int[] right;
-		public int[] sum;
-		public int cnt;
+		public Node root;
 		public int size;
 
 		public DynamicSegmentTree(int max) {
-			left = new int[max << 1];
-			right = new int[max << 1];
-			sum = new int[max << 1];
-			cnt = 1;
+			root = new Node();
 			size = max;
 		}
 
-		public void add(int i, int v) {
-			add(1, 1, size, i, v);
+		private void pushUp(Node c) {
+			c.sum = c.left.sum + c.right.sum;
 		}
 
-		private void add(int c, int l, int r, int i, int v) {
-			if (l == r) {
-				sum[c] += v;
+		private void pushDown(Node p, int ln, int rn) {
+			if (p.left == null) {
+				p.left = new Node();
+			}
+			if (p.right == null) {
+				p.right = new Node();
+			}
+			if (p.update) {
+				p.left.update = true;
+				p.right.update = true;
+				p.left.change = p.change;
+				p.right.change = p.change;
+				p.left.lazy = 0;
+				p.right.lazy = 0;
+				p.left.sum = p.change * ln;
+				p.right.sum = p.change * rn;
+				p.update = false;
+			}
+			if (p.lazy != 0) {
+				p.left.lazy += p.lazy;
+				p.right.lazy += p.lazy;
+				p.left.sum += p.lazy * ln;
+				p.right.sum += p.lazy * rn;
+				p.lazy = 0;
+			}
+		}
+
+		public void update(int s, int e, int v) {
+			update(root, 1, size, s, e, v);
+		}
+
+		private void update(Node c, int l, int r, int s, int e, int v) {
+			if (s <= l && r <= e) {
+				c.update = true;
+				c.change = v;
+				c.sum = v * (r - l + 1);
+				c.lazy = 0;
 			} else {
-				int mid = (l + r) / 2;
-				if (i <= mid) {
-					if (left[c] == 0) {
-						left[c] = ++cnt;
-					}
-					add(left[c], l, mid, i, v);
-				} else {
-					if (right[c] == 0) {
-						right[c] = ++cnt;
-					}
-					add(right[c], mid + 1, r, i, v);
+				int mid = (l + r) >> 1;
+				pushDown(c, mid - l + 1, r - mid);
+				if (s <= mid) {
+					update(c.left, l, mid, s, e, v);
 				}
-				sum[c] = sum[left[c]] + sum[right[c]];
+				if (e > mid) {
+					update(c.right, mid + 1, r, s, e, v);
+				}
+				pushUp(c);
 			}
 		}
 
-		public int sum(int s, int e) {
-			return sum(1, 1, size, s, e);
+		public void add(int s, int e, int v) {
+			add(root, 1, size, s, e, v);
 		}
 
-		private int sum(int c, int l, int r, int s, int e) {
-			if (sum[c] == 0 || (s <= l && r <= e)) {
-				return sum[c];
-			}
-			int mid = (l + r) / 2;
-			if (e <= mid) {
-				return sum(left[c], l, mid, s, e);
-			} else if (s > mid) {
-				return sum(right[c], mid + 1, r, s, e);
+		private void add(Node c, int l, int r, int s, int e, int v) {
+			if (s <= l && r <= e) {
+				c.sum += v * (r - l + 1);
+				c.lazy += v;
 			} else {
-				return sum(left[c], l, mid, s, e) + sum(right[c], mid + 1, r, s, e);
+				int mid = (l + r) >> 1;
+				pushDown(c, mid - l + 1, r - mid);
+				if (s <= mid) {
+					add(c.left, l, mid, s, e, v);
+				}
+				if (e > mid) {
+					add(c.right, mid + 1, r, s, e, v);
+				}
+				pushUp(c);
 			}
+		}
+
+		public int query(int s, int e) {
+			return query(root, 1, size, s, e);
+		}
+
+		private int query(Node c, int l, int r, int s, int e) {
+			if (s <= l && r <= e) {
+				return c.sum;
+			}
+			int mid = (l + r) >> 1;
+			pushDown(c, mid - l + 1, r - mid);
+			int ans = 0;
+			if (s <= mid) {
+				ans += query(c.left, l, mid, s, e);
+			}
+			if (e > mid) {
+				ans += query(c.right, mid + 1, r, s, e);
+			}
+			return ans;
 		}
 
 	}
@@ -68,11 +127,19 @@ public class code6_DynamicSegmentTree {
 			arr = new int[size + 1];
 		}
 
-		public void add(int i, int v) {
-			arr[i] += v;
+		public void add(int s, int e, int v) {
+			for (int i = s; i <= e; i++) {
+				arr[i] += v;
+			}
 		}
 
-		public int sum(int s, int e) {
+		public void update(int s, int e, int v) {
+			for (int i = s; i <= e; i++) {
+				arr[i] = v;
+			}
+		}
+
+		public int query(int s, int e) {
 			int sum = 0;
 			for (int i = s; i <= e; i++) {
 				sum += arr[i];
@@ -83,29 +150,45 @@ public class code6_DynamicSegmentTree {
 	}
 
 	public static void main(String[] args) {
-		int size = 100;
-		int testTime = 5000;
-		int value = 500;
-		DynamicSegmentTree dst = new DynamicSegmentTree(size);
-		Right right = new Right(size);
+		int n = 1000;
+		int value = 50;
+		int createTimes = 5000;
+		int operateTimes = 5000;
 		System.out.println("测试开始");
-		for (int k = 0; k < testTime; k++) {
-			if (Math.random() < 0.5) {
-				int i = (int) (Math.random() * size) + 1;
-				int v = (int) (Math.random() * value);
-				dst.add(i, v);
-				right.add(i, v);
-			} else {
-				int a = (int) (Math.random() * size) + 1;
-				int b = (int) (Math.random() * size) + 1;
-				int s = Math.min(a, b);
-				int e = Math.max(a, b);
-				int ans1 = dst.sum(s, e);
-				int ans2 = right.sum(s, e);
-				if (ans1 != ans2) {
-					System.out.println("出错了!");
-					System.out.println(ans1);
-					System.out.println(ans2);
+		for (int i = 0; i < createTimes; i++) {
+			int size = (int) (Math.random() * n) + 1;
+			DynamicSegmentTree dst = new DynamicSegmentTree(size);
+			Right right = new Right(size);
+			for (int k = 0; k < operateTimes; k++) {
+				double choose = Math.random();
+				if (choose < 0.333) {
+					int a = (int) (Math.random() * size) + 1;
+					int b = (int) (Math.random() * size) + 1;
+					int s = Math.min(a, b);
+					int e = Math.max(a, b);
+					int v = (int) (Math.random() * value);
+					dst.update(s, e, v);
+					right.update(s, e, v);
+				} else if (choose < 0.666) {
+					int a = (int) (Math.random() * size) + 1;
+					int b = (int) (Math.random() * size) + 1;
+					int s = Math.min(a, b);
+					int e = Math.max(a, b);
+					int v = (int) (Math.random() * value);
+					dst.add(s, e, v);
+					right.add(s, e, v);
+				} else {
+					int a = (int) (Math.random() * size) + 1;
+					int b = (int) (Math.random() * size) + 1;
+					int s = Math.min(a, b);
+					int e = Math.max(a, b);
+					int ans1 = dst.query(s, e);
+					int ans2 = right.query(s, e);
+					if (ans1 != ans2) {
+						System.out.println("出错了!");
+						System.out.println(ans1);
+						System.out.println(ans2);
+					}
 				}
 			}
 		}
