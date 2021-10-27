@@ -3,6 +3,7 @@ package cn.zju.group10;
 import java.util.*;
 
 // 本题测试链接 : https://leetcode.com/problems/word-ladder-ii/
+// 单词接龙2
 public class code2_126_WordLadderII {
 
 	public static List<List<String>> findLadders(String start, String end, List<String> list) {

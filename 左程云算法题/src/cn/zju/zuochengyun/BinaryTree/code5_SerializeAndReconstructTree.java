@@ -35,7 +35,7 @@ public class code5_SerializeAndReconstructTree {
         if(value == null){
             return null;
         }
-        TreeNode head = new TreeNode(Integer.valueOf(value));
+        TreeNode head = new TreeNode(Integer.parseInt(value));
         head.left = preb(prelist);
         head.right = preb(prelist);
         return head;
@@ -96,6 +96,6 @@ public class code5_SerializeAndReconstructTree {
         if(val == null){
             return null;
         }
-        return new TreeNode(Integer.valueOf(val));
+        return new TreeNode(Integer.parseInt(val));
     }
 }

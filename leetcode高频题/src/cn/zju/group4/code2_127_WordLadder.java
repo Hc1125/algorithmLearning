@@ -1,7 +1,7 @@
 package cn.zju.group4;
 
 import java.util.*;
-
+// 单词接龙1
 public class code2_127_WordLadder {
     public int ladderLength1(String start, String to, List<String> wordList) {
         wordList.add(start);

@@ -25,9 +25,7 @@ public class code16_49_GroupAnagrams {
 			map.get(key).add(str);
 		}
 		List<List<String>> res = new ArrayList<List<String>>();
-		for (List<String> list : map.values()) {
-			res.add(list);
-		}
+		res.addAll(map.values());
 		return res;
 	}
 
@@ -41,9 +39,7 @@ public class code16_49_GroupAnagrams {
 			map.get(key).add(str);
 		}
 		List<List<String>> res = new ArrayList<List<String>>();
-		for (List<String> list : map.values()) {
-			res.add(list);
-		}
+		res.addAll(map.values());
 		return res;
 	}
 

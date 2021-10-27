@@ -18,11 +18,7 @@ public class code4_621_TaskScheduler {
 				maxKinds++;
 			}
 		}
-		// 砍掉最后一组剩余的任务数
-		int tasksExceptFinalTeam = tasks.length - maxKinds;
-		int spaces = (free + 1) * (maxCount - 1);
-		int restSpaces = Math.max(0, spaces - tasksExceptFinalTeam);
-		return tasks.length + restSpaces;
+		return Math.max((maxCount - 1) * (free + 1) + maxCount, tasks.length);
 	}
 	
 

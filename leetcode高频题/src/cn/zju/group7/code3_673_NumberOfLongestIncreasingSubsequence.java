@@ -10,6 +10,8 @@ public class code3_673_NumberOfLongestIncreasingSubsequence {
         if (nums == null || nums.length == 0) {
             return 0;
         }
+        // dp[i]代表长度为i的所有结尾以及对应个数
+        // treeMap中key为结尾元素，而val代表大于等于key的结尾对应的总个数
         ArrayList<TreeMap<Integer, Integer>> dp = new ArrayList<>();
         int len = 0;
         int cnt = 0;

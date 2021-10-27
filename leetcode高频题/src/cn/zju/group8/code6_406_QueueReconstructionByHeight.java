@@ -2,7 +2,6 @@ package cn.zju.group8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedList;
 
 public class code6_406_QueueReconstructionByHeight {
@@ -13,7 +12,7 @@ public class code6_406_QueueReconstructionByHeight {
 		for (int i = 0; i < N; i++) {
 			units[i] = new Unit(people[i][0], people[i][1]);
 		}
-		Arrays.sort(units, new UnitComparator());
+		Arrays.sort(units, (o1, o2) -> o1.h != o2.h ? (o2.h - o1.h) : (o1.k - o2.k));
 		ArrayList<Unit> arrList = new ArrayList<>();
 		for (Unit unit : units) {
 			arrList.add(unit.k, unit);
@@ -33,7 +32,7 @@ public class code6_406_QueueReconstructionByHeight {
 		for (int i = 0; i < N; i++) {
 			units[i] = new Unit(people[i][0], people[i][1]);
 		}
-		Arrays.sort(units, new UnitComparator());
+		Arrays.sort(units, (o1, o2) -> o1.h != o2.h ? (o2.h - o1.h) : (o1.k - o2.k));
 		SBTree tree = new SBTree();
 		for (int i = 0; i < N; i++) {
 			tree.insert(units[i].k, i);
@@ -58,14 +57,6 @@ public class code6_406_QueueReconstructionByHeight {
 		}
 	}
 
-	public static class UnitComparator implements Comparator<Unit> {
-
-		@Override
-		public int compare(Unit o1, Unit o2) {
-			return o1.h != o2.h ? (o2.h - o1.h) : (o1.k - o2.k);
-		}
-
-	}
 
 	public static class SBTNode {
 		public int value;

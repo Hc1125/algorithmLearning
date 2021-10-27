@@ -26,7 +26,7 @@ public class code9_163_MissingRanges {
         String left = String.valueOf(lower);
         String right = "";
         if (upper > lower) {
-            right = "->" + String.valueOf(upper);
+            right = "->" + upper;
         }
         return left + right;
     }

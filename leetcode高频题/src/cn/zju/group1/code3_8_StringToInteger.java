@@ -6,7 +6,7 @@ public class code3_8_StringToInteger {
             return 0;
         }
         s = removeHeadZero(s.trim());
-        if (s == null || s.equals("")) {
+        if (s.equals("")) {
             return 0;
         }
         char[] str = s.toCharArray();

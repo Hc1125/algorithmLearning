@@ -11,19 +11,19 @@ public class code4_213_HouseRobberII {
         if (nums.length == 2) {
             return Math.max(nums[0], nums[1]);
         }
-        int pre2 = nums[0];
+        int pre0 = nums[0];
         int pre1 = Math.max(nums[0], nums[1]);
         for (int i = 2; i < nums.length - 1; i++) {
-            int tmp = Math.max(pre1, nums[i] + pre2);
-            pre2 = pre1;
+            int tmp = Math.max(pre1, nums[i] + pre0);
+            pre0 = pre1;
             pre1 = tmp;
         }
         int ans1 = pre1;
-        pre2 = nums[1];
+        pre0 = nums[1];
         pre1 = Math.max(nums[1], nums[2]);
         for (int i = 3; i < nums.length; i++) {
-            int tmp = Math.max(pre1, nums[i] + pre2);
-            pre2 = pre1;
+            int tmp = Math.max(pre1, nums[i] + pre0);
+            pre0 = pre1;
             pre1 = tmp;
         }
         int ans2 = pre1;

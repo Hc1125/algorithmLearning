@@ -10,6 +10,21 @@ public class code7_SuccessorNode {
             this.value = data;
         }
     }
+
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        TreeNode cur = root;
+        TreeNode ans = null;
+        while (cur != null) {
+            if (cur.val > p.val) {
+                ans = cur;
+                cur = cur.left;
+            } else {
+                cur = cur.right;
+            }
+        }
+        return ans;
+    }
+
     public static Node getSuccessorNode(Node node){
         if(node == null){
             return node;

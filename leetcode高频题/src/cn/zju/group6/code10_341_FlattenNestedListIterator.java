@@ -1,9 +1,6 @@
 package cn.zju.group6;
 
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class code10_341_FlattenNestedListIterator {
     public interface NestedInteger {
@@ -11,12 +8,44 @@ public class code10_341_FlattenNestedListIterator {
         public Integer getInteger();
         public List<NestedInteger> getList();
     }
-    public class NestedIterator implements Iterator<Integer> {
+    public class NestedIterator1 implements Iterator<Integer> {
+        private Deque<Iterator<NestedInteger>> stack;
+        public NestedIterator1(List<NestedInteger> nestedList) {
+            stack = new LinkedList<>();
+            stack.push(nestedList.iterator());
+        }
+        @Override
+        public boolean hasNext() {
+            while (!stack.isEmpty()) {
+                Iterator<NestedInteger> it = stack.peek();
+                if (!it.hasNext()) {
+                    stack.pop();
+                    continue;
+                }
+                NestedInteger nest = it.next();
+                if (nest.isInteger()) {
+                    List<NestedInteger> list = new ArrayList<>();
+                    list.add(nest);
+                    stack.push(list.iterator());
+                    return true;
+                }
+                stack.push(nest.getList().iterator());
+            }
+            return false;
+        }
+
+        @Override
+        public Integer next() {
+            return stack.peek().next().getInteger();
+        }
+    }
+
+    public class NestedIterator2 implements Iterator<Integer> {
         private List<NestedInteger> list;
         private Stack<Integer> stack;
         private boolean used;
 
-        public NestedIterator(List<NestedInteger> nestedList) {
+        public NestedIterator2(List<NestedInteger> nestedList) {
             list = nestedList;
             stack = new Stack<>();
             stack.push(-1);

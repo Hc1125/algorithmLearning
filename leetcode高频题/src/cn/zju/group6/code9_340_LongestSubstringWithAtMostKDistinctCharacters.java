@@ -1,5 +1,12 @@
 package cn.zju.group6;
 
+/**
+ * 给定一个字符串 s ，找出 至多 包含 k 个不同字符的最长子串 T。
+ *
+ * 输入: s = "eceba", k = 2
+ * 输出: 3
+ * 解释: 则 T 为 "ece"，所以长度为 3。
+ */
 public class code9_340_LongestSubstringWithAtMostKDistinctCharacters {
     public static int lengthOfLongestSubstringKDistinct(String s, int k) {
         if (s == null || s.length() == 0 || k < 1) {

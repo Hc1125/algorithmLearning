@@ -2,7 +2,7 @@ package cn.zju.group8;
 
 import java.util.HashMap;
 
-public class code7_437_PathSumIII {
+public class code8_437_PathSumIII {
 
 	public class TreeNode {
 		public int val;

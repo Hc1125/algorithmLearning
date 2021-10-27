@@ -3,7 +3,6 @@ package cn.zju.group8;
 // 利用morris遍历
 public class code1_114_FlattenBinaryTreeToLinkedList {
 
-	// 这个类不用提交
 	public static class TreeNode {
 		public int val;
 		public TreeNode left;
