@@ -16,7 +16,7 @@ public class code9_FindMinKth {
         int pivot = 0;
         int[] range = null;
         while (L < R) {
-            pivot = arr[L + (int) Math.random() * (R - L + 1)];
+            pivot = arr[L + (int) (Math.random() * (R - L + 1))];
             range = partition(arr, L, R, pivot);
             if (index < range[0]) {
                 R = range[0] - 1;
