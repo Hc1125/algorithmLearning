@@ -1,10 +1,14 @@
-package cn.zju.group14;
+package cn.zju.zuochengyun.Sort.MergeProblem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class code2_315_CountOfSmallerNumbersAfterSelf {
+/**
+ * 给你`一个整数数组 nums ，按要求返回一个新数组 counts 。
+ * 数组 counts 有该性质： counts[i] 的值是  nums[i] 右侧小于 nums[i] 的元素的数量。
+ */
+public class code7_CountOfSmallerNumbersAfterSelf {
 
 	public static int max = 200000;
 	public static int[] left = new int[max];

@@ -1,6 +1,6 @@
 package cn.zju.zuochengyun.GreedyAlgorithm;
 
-public class code4_Light {
+public class code5_Light {
     /**
      * 字符串只有'X'和'.'构成
      * X表示不能放灯也不需要照明

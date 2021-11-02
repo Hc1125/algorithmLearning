@@ -1,9 +1,9 @@
-package cn.zju.group12;
+package cn.zju.zuochengyun.GreedyAlgorithm;
 
 import java.util.Arrays;
 
 // 本题测试链接 : https://leetcode.com/problems/super-washing-machines/
-public class code5_517_SuperWashingMachines {
+public class code7_SuperWashingMachines {
 
 	public int findMinMoves1(int[] machines) {
 		int sum = Arrays.stream(machines).sum();

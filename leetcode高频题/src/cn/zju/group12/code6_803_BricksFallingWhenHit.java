@@ -1,6 +1,7 @@
 package cn.zju.group12;
 
 // 本题测试链接 : https://leetcode.com/problems/bricks-falling-when-hit/
+// 打砖块
 public class code6_803_BricksFallingWhenHit {
 
 	private int rows;
@@ -74,6 +75,7 @@ public class code6_803_BricksFallingWhenHit {
 	private int getIndex(int x, int y){
 		return x * cols + y;
 	}
+
 	private class UnionFind1 {
 		private int[] parent;
 		private int[] size;

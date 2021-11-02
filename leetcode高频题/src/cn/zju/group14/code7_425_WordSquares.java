@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-
+// 单词方块
 // 注意！课上介绍题目设定的时候，有一点点小错
 // 题目描述如下：
 // 给定n个字符串，并且每个字符串长度一定是n，请组成单词方阵，比如：
