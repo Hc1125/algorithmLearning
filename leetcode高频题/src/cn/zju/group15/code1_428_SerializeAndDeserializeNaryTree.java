@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * N叉树的序列化与反序列化
+ */
 public class code1_428_SerializeAndDeserializeNaryTree {
 
 	// 不要提交这个类

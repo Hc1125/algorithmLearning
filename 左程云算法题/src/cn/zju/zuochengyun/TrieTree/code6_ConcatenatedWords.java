@@ -1,4 +1,4 @@
-package cn.zju.group15;
+package cn.zju.zuochengyun.TrieTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 连接词
  */
-public class code3_472_ConcatenatedWords {
+public class code6_ConcatenatedWords {
 
 	public static class TrieNode {
 		public boolean end;
