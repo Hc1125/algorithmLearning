@@ -1,6 +1,7 @@
 package cn.zju.zuochengyun.Practice2;
 
 /**
+ * 数位dp
  * 给定一个正数N，表示你在纸上写下1~N所有的数字
  * 返回在书写过程中，一共写下了多少个1
  */

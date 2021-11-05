@@ -1,5 +1,6 @@
 package cn.zju.group16;
 
+// 字典序的第K小数字
 // 这道题在leetcode上，所有题解都只能做到O( (logN) 平方)的解
 // 我们课上讲的是O(logN)的解
 // 打败所有题解
