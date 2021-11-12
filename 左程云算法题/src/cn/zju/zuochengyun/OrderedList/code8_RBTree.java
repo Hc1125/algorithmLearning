@@ -444,7 +444,7 @@ public class code8_RBTree {
          *     key 插入结点的键值
          */
         public void insert(T key) {
-            RBTNode<T> node=new RBTNode<T>(key,BLACK,null,null,null);
+            RBTNode<T> node = new RBTNode<T>(key,BLACK,null,null,null);
 
             // 如果新建结点失败，则返回。
             if (node != null)
